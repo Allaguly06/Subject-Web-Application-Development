@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Шапка */
+header {
+    background-color: #003366;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header h2 {
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Основной блок */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Окно результата */
+.result {
+    width: 320px;
+    min-height: 100px;
+    background-color: white;
+    border: 3px solid #003366;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 20px;
+    margin-bottom: 40px;
+    word-break: break-all;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Courier New', monospace;
+}
+
+/* Сетка кнопок */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 75px);
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+/* Кнопка-ссылка */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    background: linear-gradient(145deg, #e8e8e8, #d0d0d0);
+    border: 1px solid #aaa;
+    border-radius: 50%;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #222;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: linear-gradient(145deg, #003366, #002244);
+    color: white;
+    transform: scale(1.05);
+    border-color: #003366;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Кнопка сброса */
+.reset {
+    background: linear-gradient(145deg, #ff5555, #cc0000);
+    color: white;
+    border-color: #990000;
+    font-size: 20px;
+}
+
+.reset:hover {
+    background: linear-gradient(145deg, #cc0000, #990000);
+    transform: scale(1.02);
+}
+
+/* Отдельный контейнер для кнопки сброса */
+.reset-container {
+    grid-template-columns: 1fr;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.reset-container .btn {
+    width: 100%;
+    border-radius: 40px;
+}
+
+/* Подвал */
+footer {
+    background-color: #333333;
+    color: #cccccc;
+    text-align: center;
+    padding: 12px;
+    font-size: 14px;
+    margin-top: auto;
+}
