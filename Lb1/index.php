@@ -1,14 +1,7 @@
 <?php
 date_default_timezone_set('Europe/Moscow');
 // Переменные для заголовка страницы
-$page_title = "Чарыев Аллагулы - Гр 241-353-Л/р №1";
-
-// Переменные для меню (первое включение PHP)
-$menu_items = [
-    ['link' => 'index.php', 'text' => 'Главная', 'current' => true],
-    ['link' => 'page2.php', 'text' => 'Вторая страница', 'current' => false],
-    ['link' => 'page3.php', 'text' => 'Третья страница', 'current' => false]
-];
+$page_title = "Чарыев Аллагулы - Гр 241-353 - Л/р №1";
 ?>
 
 <!DOCTYPE html>
@@ -23,12 +16,25 @@ $menu_items = [
 <header>
     <nav>
         <?php
-        // Второе включение PHP для меню
-        foreach($menu_items as $item) {
-            $class = $item['current'] ? 'selected_menu' : '';
-            echo '<a href="' . $item['link'] . '" class="' . $class . '">' . $item['text'] . '</a>';
-        }
+        // ===== ПЕРВОЕ ВКЛЮЧЕНИЕ PHP =====
+        // Задаём переменные для всех пунктов меню
+        $link1 = 'index.php';
+        $text1 = 'Главная';
+        $current1 = true;   // текущая страница
+        
+        $link2 = 'page2.php';
+        $text2 = 'Вторая страница';
+        $current2 = false;
+        
+        $link3 = 'page3.php';
+        $text3 = 'Третья страница';
+        $current3 = false;
         ?>
+        
+        <!-- ВТОРОЕ ВКЛЮЧЕНИЕ PHP — встроено прямо в HTML-теги -->
+        <a href="<?php echo $link1; ?>"<?php if($current1) echo ' class="selected_menu"'; ?>><?php echo $text1; ?></a>
+        <a href="<?php echo $link2; ?>"<?php if($current2) echo ' class="selected_menu"'; ?>><?php echo $text2; ?></a>
+        <a href="<?php echo $link3; ?>"<?php if($current3) echo ' class="selected_menu"'; ?>><?php echo $text3; ?></a>
     </nav>
 </header>
 
@@ -44,6 +50,7 @@ $menu_items = [
     <p>Среди основных преимуществ PHP можно отметить: кроссплатформенность (поддержка Windows, Linux, macOS), высокую производительность, широкие возможности для работы с базами данных (MySQL, PostgreSQL, SQLite и другие), огромное сообщество разработчиков, низкий порог входа для начинающих, а также огромное количество готовых фреймворков и библиотек.</p>
     
     <p>PHP используется такими гигантами, как Facebook, Wikipedia, Yahoo, Mail.ru, ВКонтакте и многими другими. Согласно рейтингу TIOBE, PHP стабильно входит в десятку самых популярных языков программирования в мире.</p>
+    
     <div class='box-img'>
         <?php
         $second = date('s');
@@ -55,6 +62,19 @@ $menu_items = [
         echo '<img src="src/' . $photo . '" alt="Динамическое фото" width="50%">';
         ?>
     </div>
+    
+    <div class='box-img'>
+        <?php
+        $second = date('s');
+        if ($second % 2 == 0) {
+            $photo = 'php2.avif';
+        } else {
+            $photo = 'php1.png';
+        }
+        echo '<img src="src/' . $photo . '" alt="Динамическое фото" width="50%">';
+        ?>
+    </div>
+    
     <!-- Таблица -->
     <h2>Сравнение популярных языков веб-разработки</h2>
     

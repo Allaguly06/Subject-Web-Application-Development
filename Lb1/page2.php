@@ -1,14 +1,7 @@
 <?php
 date_default_timezone_set('Europe/Moscow');
 // Переменные для заголовка страницы
-$page_title = "Чарыев Аллагулы-Гр 241-353-Л/р №1-Страница 2";
-
-// Переменные для меню (первое включение PHP)
-$menu_items = [
-    ['link' => 'index.php', 'text' => 'Главная', 'current' => false],
-    ['link' => 'page2.php', 'text' => 'Вторая страница', 'current' => true],
-    ['link' => 'page3.php', 'text' => 'Третья страница', 'current' => false]
-];
+$page_title = "Чарыев Аллагулы - Гр 241-353 - Л/р №1 - Страница 2";
 ?>
 
 <!DOCTYPE html>
@@ -23,12 +16,23 @@ $menu_items = [
 <header>
     <nav>
         <?php
-        // Второе включение PHP для меню
-        foreach($menu_items as $item) {
-            $class = $item['current'] ? 'selected_menu' : '';
-            echo '<a href="' . $item['link'] . '" class="' . $class . '">' . $item['text'] . '</a>';
-        }
+        // ===== ПЕРВОЕ ВКЛЮЧЕНИЕ PHP =====
+        $link1 = 'index.php';
+        $text1 = 'Главная';
+        $current1 = false;
+        
+        $link2 = 'page2.php';
+        $text2 = 'Вторая страница';
+        $current2 = true;   // текущая страница
+        
+        $link3 = 'page3.php';
+        $text3 = 'Третья страница';
+        $current3 = false;
         ?>
+        
+        <a href="<?php echo $link1; ?>"<?php if($current1) echo ' class="selected_menu"'; ?>><?php echo $text1; ?></a>
+        <a href="<?php echo $link2; ?>"<?php if($current2) echo ' class="selected_menu"'; ?>><?php echo $text2; ?></a>
+        <a href="<?php echo $link3; ?>"<?php if($current3) echo ' class="selected_menu"'; ?>><?php echo $text3; ?></a>
     </nav>
 </header>
 
@@ -70,6 +74,7 @@ $menu_items = [
     </tr>
     
     <?php echo '</table>'; ?>
+    
     <div class='box-img'>
         <?php
         $second = date('s');
@@ -81,6 +86,19 @@ $menu_items = [
         echo '<img src="src/' . $photo . '" alt="Динамическое фото" width="50%">';
         ?>
     </div>
+    
+    <div class='box-img'>
+        <?php
+        $second = date('s');
+        if ($second % 2 == 0) {
+            $photo = 'php2.avif';
+        } else {
+            $photo = 'php1.png';
+        }
+        echo '<img src="src/' . $photo . '" alt="Динамическое фото" width="50%">';
+        ?>
+    </div>
+    
     <h2>Условные операторы и циклы</h2>
     <p>PHP поддерживает все стандартные конструкции управления потоком выполнения: if/else, switch, while, do-while, for и foreach. Условный оператор if позволяет выполнять различные блоки кода в зависимости от условий. Циклы используются для многократного выполнения одного и того же блока кода.</p>
     
@@ -94,7 +112,6 @@ $menu_items = [
 
 <footer>
     <?php
-    // Выводим дату и время в подвале
     echo 'Сформировано ' . date('d.m.Y \в H-i:s');
     ?>
 </footer>

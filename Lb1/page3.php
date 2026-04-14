@@ -1,14 +1,7 @@
 <?php
 date_default_timezone_set('Europe/Moscow');
 // Переменные для заголовка страницы
-$page_title = "Чарыев Аллагулы-Гр 241-353-Л/р №1-Страница 3";
-
-// Переменные для меню (первое включение PHP)
-$menu_items = [
-    ['link' => 'index.php', 'text' => 'Главная', 'current' => false],
-    ['link' => 'page2.php', 'text' => 'Вторая страница', 'current' => false],
-    ['link' => 'page3.php', 'text' => 'Третья страница', 'current' => true]
-];
+$page_title = "Чарыев Аллагулы - Гр 241-353 - Л/р №1 - Страница 3";
 ?>
 
 <!DOCTYPE html>
@@ -23,17 +16,29 @@ $menu_items = [
 <header>
     <nav>
         <?php
-        // Второе включение PHP для меню
-        foreach($menu_items as $item) {
-            $class = $item['current'] ? 'selected_menu' : '';
-            echo '<a href="' . $item['link'] . '" class="' . $class . '">' . $item['text'] . '</a>';
-        }
+        // ===== ПЕРВОЕ ВКЛЮЧЕНИЕ PHP =====
+        $link1 = 'index.php';
+        $text1 = 'Главная';
+        $current1 = false;
+        
+        $link2 = 'page2.php';
+        $text2 = 'Вторая страница';
+        $current2 = false;
+        
+        $link3 = 'page3.php';
+        $text3 = 'Третья страница';
+        $current3 = true;   // текущая страница
         ?>
+        
+        <a href="<?php echo $link1; ?>"<?php if($current1) echo ' class="selected_menu"'; ?>><?php echo $text1; ?></a>
+        <a href="<?php echo $link2; ?>"<?php if($current2) echo ' class="selected_menu"'; ?>><?php echo $text2; ?></a>
+        <a href="<?php echo $link3; ?>"<?php if($current3) echo ' class="selected_menu"'; ?>><?php echo $text3; ?></a>
     </nav>
 </header>
 
 <main>
     <h1>Работа с суперглобальными массивами и формами</h1>
+    
     <div class='box-img'>
         <?php
         $second = date('s');
@@ -45,6 +50,19 @@ $menu_items = [
         echo '<img src="src/' . $photo . '" alt="Динамическое фото" width="50%">';
         ?>
     </div>
+    
+    <div class='box-img'>
+        <?php
+        $second = date('s');
+        if ($second % 2 == 0) {
+            $photo = 'php2.avif';
+        } else {
+            $photo = 'php1.png';
+        }
+        echo '<img src="src/' . $photo . '" alt="Динамическое фото" width="50%">';
+        ?>
+    </div>
+    
     <h2>Что такое суперглобальные массивы?</h2>
     <p>В PHP существуют предопределённые суперглобальные массивы, которые доступны в любой области видимости скрипта. К ним относятся: $_GET (данные из строки запроса), $_POST (данные из форм, отправленных методом POST), $_SESSION (сессионные данные), $_COOKIE (куки), $_SERVER (информация о сервере и окружении), $_FILES (загруженные файлы) и другие.</p>
     
@@ -58,7 +76,7 @@ $menu_items = [
     
     <?php
     // Первая строка таблицы выводится полностью средствами PHP
-    echo '<table>';
+    echo '</table>';
     echo '<tr><th>Массив</th><th>Назначение</th><th>Пример использования</th></tr>';
     ?>
     
@@ -99,7 +117,6 @@ $menu_items = [
 
 <footer>
     <?php
-    // Выводим дату и время в подвале
     echo 'Сформировано ' . date('d.m.Y \в H-i:s');
     ?>
 </footer>
