@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h2 {
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+h1 {
+    color: #003366;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #003366;
+    padding-bottom: 10px;
+}
+
+/* Стили формы */
+.form-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.form-left, .form-right {
+    flex: 1;
+    min-width: 280px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Подписи слева от полей */
+.form-group label {
+    width: 180px;
+    font-weight: 600;
+    color: #555;
+    text-align: left;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #003366;
+}
+
+.form-group textarea {
+    resize: vertical;
+    font-family: inherit;
+}
+
+/* Чекбокс */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input {
+    width: auto;
+    margin-right: 10px;
+}
+
+.checkbox-group label {
+    width: auto;
+    text-align: left;
+}
+
+/* Поле email (скрыто изначально) */
+#email_div {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #ccc;
+}
+
+/* Кнопка */
+.form-buttons {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.submit-btn:hover {
+    background-color: #0055aa;
+    transform: scale(1.02);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* Отчёт */
+.report {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.report h2 {
+    color: #003366;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 10px;
+}
+
+.report p {
+    margin: 12px 0;
+    line-height: 1.5;
+}
+
+.report .mail-success {
+    color: #2e7d32;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e8f5e9;
+    border-radius: 6px;
+}
+
+.report .mail-error {
+    color: #c62828;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffebee;
+    border-radius: 6px;
+}
+
+/* Кнопка "Повторить тест" */
+.repeat-link {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.repeat-button {
+    display: inline-block;
+    background-color: #003366;
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.repeat-button:hover {
+    background-color: #0055aa;
+}
+
+/* Подвал */
+footer {
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+/* Для печати */
+@media print {
+    header, footer, .form-container, .repeat-link, .submit-btn {
+        display: none;
+    }
+    .report {
+        box-shadow: none;
+        padding: 0;
+    }
+    body {
+        background-color: white;
+    }
+}
