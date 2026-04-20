@@ -7,7 +7,7 @@
 // === 1. ПОЛУЧЕНИЕ ПАРАМЕТРОВ ===
 // html_type - тип верстки (TABLE или DIV)
 // content   - содержимое (2-9 или отсутствует для полной таблицы)
-
+date_default_timezone_set('Europe/Moscow');
 $html_type = isset($_GET['html_type']) ? $_GET['html_type'] : 'TABLE';
 $content   = isset($_GET['content'])   ? (int)$_GET['content'] : null;
 
