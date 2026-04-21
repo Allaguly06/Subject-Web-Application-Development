@@ -131,6 +131,9 @@ $structures = [
 <body>
 
 <header>
+    <div class="logo">
+        <img src="logo.png" alt="Логотип университета" onerror="this.style.display='none'">
+    </div>
     <h2>Лабораторная работа №4</h2>
     <p>Чарыев Аллагулы | Группа 241-353</p>
 </header>
